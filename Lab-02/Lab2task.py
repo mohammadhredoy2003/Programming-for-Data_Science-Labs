@@ -92,3 +92,39 @@ else:
     while number >= 0:
         print(number)
         number -= 1
+
+    #Problem 08
+inventory = [
+    {"name": "Laptop", "price": 1200.00, "quantity": 5},
+    {"name": "Mouse", "price": 25.00, "quantity": 40},
+    {"name": "Monitor", "price": 300.00, "quantity": 12},
+    {"name": "Keyboard", "price": 75.00, "quantity": 15},
+    {"name": "Headphones", "price": 150.00, "quantity": 8},
+]
+
+total_inventory_value = 0
+highest_product = ""
+highest_line_total = 0
+
+
+for item in inventory:
+
+    line_total = item["price"] * item["quantity"]
+
+    
+    total_inventory_value = total_inventory_value + line_total
+
+    
+    if line_total > highest_line_total:
+        highest_line_total = line_total
+        highest_product = item["name"]
+
+    
+    print(
+        f"{item['name']} - ${item['price']} x {item['quantity']} = ${line_total}"
+    )
+
+print("-" * 40)
+# Print final summary
+print(f"Total Inventory Value: ${total_inventory_value}")
+print(f"Highest Value Item: {highest_product} (${highest_line_total})")
