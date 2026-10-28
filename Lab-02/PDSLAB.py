@@ -92,14 +92,41 @@ else:
     while number >= 0:
         print(number)
         number -= 1
+#Problem 07
 
-    #Problem 08
+students = [
+    {"name": "Rahim", "department": "CSE", "marks": 85, "attendance": 92},
+    {"name": "Karim", "department": "CSE", "marks": 48, "attendance": 76},
+    {"name": "Sara", "department": "DS", "marks": 91, "attendance": 95},
+    {"name": "Nadia", "department": "DS", "marks": 67, "attendance": 84},
+    {"name": "Hasan", "department": "CSE", "marks": 73, "attendance": 78}
+]
+
+pass_count = 0
+highest_student = students[0]
+
+for student in students:
+    print(student["name"] + ": " + str(student["marks"]))
+    
+    if student["marks"] >= 50:
+        pass_count += 1
+        
+    if student["marks"] > highest_student["marks"]:
+        highest_student = student
+
+print("Total students who passed:", pass_count)
+print("Student with highest marks:", highest_student["name"], "with", highest_student["marks"])
+
+
+#Problem 08
 inventory = [
-    {"name": "Laptop", "price": 1200.00, "quantity": 5},
-    {"name": "Mouse", "price": 25.00, "quantity": 40},
-    {"name": "Monitor", "price": 300.00, "quantity": 12},
-    {"name": "Keyboard", "price": 75.00, "quantity": 15},
-    {"name": "Headphones", "price": 150.00, "quantity": 8},
+    {"name": "Notebook", "price": 120, "quantity": 3},
+
+{"name": "Pen", "price": 20, "quantity": 5},
+
+{"name": "USB Drive", "price": 850, "quantity": 2},
+
+{"name": "Mouse", "price": 650, "quantity": 1}
 ]
 
 total_inventory_value = 0
@@ -124,7 +151,5 @@ for item in inventory:
         f"{item['name']} - ${item['price']} x {item['quantity']} = ${line_total}"
     )
 
-print("-" * 40)
-# Print final summary
 print(f"Total Inventory Value: ${total_inventory_value}")
 print(f"Highest Value Item: {highest_product} (${highest_line_total})")
